@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>oh God what did I say</title>
+
+<style>
+@font-face {
+  font-family: 'Youthead';
+  src: url('Youthead.otf') format('opentype');
+}
+
+/* RESET BASE */
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; width:100%; }
+
+body {
+  background: url('glitter.gif') center/cover repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family: 'Youthead', Arial, sans-serif;
+  overflow:hidden;
+  flex-direction:column;
+}
+
+/* CONTENITORE PRINCIPALE */
+.card {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* LINK DELLA SCRITTA */
+.text-link {
+  display: inline-block;
+  z-index: 10;
+  text-decoration: none;
+}
+
+/* SCRITTA */
+.text {
+  font-size: clamp(30px,6vw,70px);
+  font-weight: bold;
+  color: #8B0000; /* rosso sangue */
+  text-shadow: 0 0 20px rgba(139,0,0,0.7);
+  transition: transform .4s ease, color .3s ease;
+  pointer-events: none;
+  font-family: 'Youthead', Arial, sans-serif;
+}
+.card:hover .text {
+  transform: translateY(-50px);
+  color: #ffb3b3;
+}
+
+/* FACCIA CHE APPARE AL PASSAGGIO DEL MOUSE */
+.face {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  overflow:hidden;
+  opacity:0;
+  transition: opacity .4s ease, transform .4s ease;
+  box-shadow:0 0 40px rgba(0,0,0,0.6);
+}
+.face img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.card:hover .face {
+  opacity:1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .face { width:150px; height:150px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <!-- Scritta cliccabile: apre il video in nuova scheda -->
+  <a href="video.html" target="_blank" class="text-link">
+    <div class="text">oh God what did i say</div>
+  </a>
+
+  <!-- Faccia piccola che appare al passaggio del mouse -->
+  <div class="face">
+    <img src="olivia.jpg" alt="faccia">
+  </div>
+</div>
+
+</body>
+</html>
